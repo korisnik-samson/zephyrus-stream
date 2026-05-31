@@ -458,6 +458,38 @@ a {
     -webkit-line-clamp: 3;
 }
 
+/* ── Player Range Slider ────────────────────────────────── */
+.player-range {
+    appearance: none;
+    -webkit-appearance: none;
+    height: 4px;
+    border-radius: 2px;
+    cursor: pointer;
+    outline: none;
+    transition: height 0.15s;
+}
+.player-range:hover { height: 5px; }
+.player-range::-webkit-slider-thumb {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #fb923c;
+    cursor: pointer;
+    box-shadow: 0 0 6px rgba(0,0,0,0.5);
+    transition: transform 0.1s;
+}
+.player-range::-webkit-slider-thumb:hover { transform: scale(1.25); }
+.player-range::-moz-range-thumb {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #fb923c;
+    border: none;
+    cursor: pointer;
+}
+
 /* Shimmer loading placeholder */
 .shimmer {
     background: linear-gradient(
