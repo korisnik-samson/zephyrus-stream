@@ -12,6 +12,7 @@ import {
   Settings,
   LogOut,
   ChevronDown,
+  UserCircle2,
 } from "lucide-react";
 import {
   Button,
@@ -192,10 +193,17 @@ export default function Navbar() {
                 <DropdownMenuGroup>
                   <DropdownMenuItem
                     className="cursor-pointer gap-2 text-text-primary hover:bg-bg-elevated"
-                    onClick={() => router.push("/profile")}
+                    onClick={() => router.push("/profiles")}
+                  >
+                    <UserCircle2 className="h-4 w-4" />
+                    Switch Profile
+                  </DropdownMenuItem>
+                  <DropdownMenuItem
+                    className="cursor-pointer gap-2 text-text-primary hover:bg-bg-elevated"
+                    onClick={() => router.push("/profiles/manage")}
                   >
                     <User className="h-4 w-4" />
-                    Profile
+                    Manage Profiles
                   </DropdownMenuItem>
                   <DropdownMenuItem
                     className="cursor-pointer gap-2 text-text-primary hover:bg-bg-elevated"

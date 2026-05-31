@@ -97,7 +97,7 @@ export default function VideoPlayer({ session, seasons = [] }: VideoPlayerProps)
       hlsRef.current?.destroy();
       hlsRef.current = null;
     };
-  }, [session.streamUrl]);
+  }, [session.streamUrl])
 
   // ────────────────────────────────────────────────────────
   // Sync preferences → video element
