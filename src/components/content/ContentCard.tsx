@@ -90,7 +90,7 @@ export default function ContentCard({ title, index = 0 }: ContentCardProps) {
 
       {/* ─── Expanded Hover Card ──────────────────────────────── */}
       {isHovered && (
-        <div className="absolute -left-4 -right-4 top-0 z-30 animate-scale-in rounded-xl bg-bg-card shadow-card-hover border border-border overflow-hidden">
+        <div className="absolute -left-4 -right-4 top-0 z-30 animate-scale-in rounded-xl liquid-glass overflow-hidden">
           {/* Backdrop image */}
           <div className="relative aspect-video w-full">
             {title.backdropPath ? (

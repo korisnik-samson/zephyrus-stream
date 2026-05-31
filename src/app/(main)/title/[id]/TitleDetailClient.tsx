@@ -59,7 +59,7 @@ export default function TitleDetailClient({
                 {/* ─── Title + Meta ──────────────────────────────────── */}
                 <h1
                     className="text-3xl font-extrabold text-text-primary md:text-5xl lg:text-6xl mb-4"
-                    style={{ textShadow: "0 0 40px rgba(124, 58, 237, 0.3)" }}
+                    style={{ textShadow: "0 0 40px rgba(194, 65, 12, 0.4)" }}
                 >
                     {title.title}
                 </h1>
@@ -111,7 +111,7 @@ export default function TitleDetailClient({
                     <Button
                         size="lg"
                         variant="outline"
-                        className="gap-2 glass border-white/20 text-text-primary hover:bg-white/10"
+                        className="gap-2 liquid-glass text-text-primary"
                     >
                         <Plus className="h-5 w-5"/>
                         My List

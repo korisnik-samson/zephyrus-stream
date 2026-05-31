@@ -73,7 +73,7 @@ export default function Navbar() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         scrolled
-          ? "bg-bg-primary/95 backdrop-blur-md shadow-sm border-b border-border"
+          ? "liquid-glass-dark border-b border-[rgba(255,200,120,0.12)]"
           : "bg-gradient-to-b from-black/80 to-transparent"
       )}
     >
@@ -244,7 +244,7 @@ export default function Navbar() {
 
       {/* ─── Mobile slide-down nav ──────────────────────────── */}
       {mobileOpen && (
-        <div className="lg:hidden animate-slide-down border-t border-border bg-bg-primary/95 backdrop-blur-md">
+        <div className="lg:hidden animate-slide-down border-t border-[rgba(255,200,120,0.12)] liquid-glass-dark">
           <ul className="flex flex-col gap-1 px-4 py-4">
             {NAV_LINKS.map((link) => {
               const isActive = pathname === link.href;

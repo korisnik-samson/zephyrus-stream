@@ -109,7 +109,7 @@ export default function HeroBillboard({ items }: HeroBillboardProps) {
           <h1
             className="mb-4 text-3xl font-extrabold leading-tight text-text-primary md:text-5xl lg:text-6xl"
             style={{
-              textShadow: "0 0 40px rgba(124, 58, 237, 0.3)",
+              textShadow: "0 0 40px rgba(194, 65, 12, 0.4)",
             }}
           >
             {current.title}
@@ -140,7 +140,7 @@ export default function HeroBillboard({ items }: HeroBillboardProps) {
 
           <Link
             href={`/title/${current.id}`}
-            className="inline-flex items-center gap-2 h-9 px-4 rounded-lg glass border border-white/20 text-text-primary hover:bg-white/10 text-sm font-medium transition-all"
+            className="inline-flex items-center gap-2 h-9 px-4 rounded-lg liquid-glass text-text-primary text-sm font-medium transition-all"
           >
             <Info className="h-5 w-5" />
             More Info

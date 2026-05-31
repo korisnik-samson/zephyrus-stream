@@ -61,7 +61,7 @@ export default function ContentRow({ row, seeAllHref }: ContentRowProps) {
           <Button
             variant="ghost"
             size="icon"
-            className="absolute left-1 top-1/2 z-20 -translate-y-1/2 h-24 w-10 rounded-md bg-black/60 text-white opacity-0 transition-opacity group-hover/row:opacity-100 hover:bg-black/80"
+            className="absolute left-1 top-1/2 z-20 -translate-y-1/2 h-24 w-10 rounded-md liquid-glass-sm text-white opacity-0 transition-opacity group-hover/row:opacity-100"
             onClick={() => scroll("left")}
             aria-label="Scroll left"
           >
@@ -74,7 +74,7 @@ export default function ContentRow({ row, seeAllHref }: ContentRowProps) {
           <Button
             variant="ghost"
             size="icon"
-            className="absolute right-1 top-1/2 z-20 -translate-y-1/2 h-24 w-10 rounded-md bg-black/60 text-white opacity-0 transition-opacity group-hover/row:opacity-100 hover:bg-black/80"
+            className="absolute right-1 top-1/2 z-20 -translate-y-1/2 h-24 w-10 rounded-md liquid-glass-sm text-white opacity-0 transition-opacity group-hover/row:opacity-100"
             onClick={() => scroll("right")}
             aria-label="Scroll right"
           >
