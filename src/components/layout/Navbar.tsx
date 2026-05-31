@@ -179,9 +179,11 @@ export default function Navbar() {
                 align="end"
                 className="w-52 bg-bg-secondary border-border"
               >
-                <DropdownMenuLabel className="text-text-secondary text-xs font-normal">
-                  {user.email}
-                </DropdownMenuLabel>
+                <DropdownMenuGroup>
+                  <DropdownMenuLabel className="text-text-secondary text-xs font-normal">
+                    {user.email}
+                  </DropdownMenuLabel>
+                </DropdownMenuGroup>
                 <DropdownMenuSeparator />
                 <DropdownMenuGroup>
                   <DropdownMenuItem
