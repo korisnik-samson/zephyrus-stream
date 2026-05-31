@@ -1,19 +1,11 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import {
-  Search,
-  Menu,
-  X,
-  User,
-  Settings,
-  LogOut,
-  ChevronDown,
-  UserCircle2,
-} from "lucide-react";
+import { Search, Menu, X, User, Settings, LogOut, ChevronDown, UserCircle2 } from "lucide-react";
 import NotificationBell from "./NotificationBell";
+import { useUIStore } from "@/stores/uiStore";
 import {
   Button,
   Avatar,
@@ -36,12 +28,11 @@ const SCROLL_THRESHOLD = 60;
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [searchOpen, setSearchOpen] = useState(false);
-  const [searchQuery, setSearchQuery] = useState("");
 
   const pathname = usePathname();
   const router = useRouter();
   const { user, isAuthenticated, signOut } = useAuth();
+  const { setSearchOpen } = useUIStore();
 
   // ─── Scroll listener ─────────────────────────────────────
   useEffect(() => {
@@ -55,19 +46,6 @@ export default function Navbar() {
   useEffect(() => {
     setMobileOpen(false);
   }, [pathname]);
-
-  // ─── Search submit ────────────────────────────────────────
-  const handleSearchSubmit = useCallback(
-    (e: React.FormEvent) => {
-      e.preventDefault();
-      if (searchQuery.trim()) {
-        router.push(`/search?q=${encodeURIComponent(searchQuery.trim())}`);
-        setSearchOpen(false);
-        setSearchQuery("");
-      }
-    },
-    [searchQuery, router]
-  );
 
   return (
     <header
@@ -114,46 +92,16 @@ export default function Navbar() {
 
         {/* ─── Right: Search, Notifications, Avatar ────────── */}
         <div className="flex items-center gap-2">
-          {/* Search toggle / input */}
-          <div className="relative flex items-center">
-            {searchOpen ? (
-              <form
-                onSubmit={handleSearchSubmit}
-                className="flex items-center animate-fade-in"
-              >
-                <input
-                  type="text"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder="Titles, genres, people…"
-                  autoFocus
-                  className="h-8 w-40 sm:w-56 rounded-md border border-border bg-bg-secondary/80 px-3 text-sm text-text-primary placeholder:text-text-muted focus:outline-none focus:border-accent-purple transition-all"
-                />
-                <Button
-                  type="button"
-                  variant="ghost"
-                  size="icon"
-                  className="ml-1 h-8 w-8 text-text-secondary hover:text-text-primary"
-                  onClick={() => {
-                    setSearchOpen(false);
-                    setSearchQuery("");
-                  }}
-                >
-                  <X className="h-4 w-4" />
-                </Button>
-              </form>
-            ) : (
-              <Button
-                variant="ghost"
-                size="icon"
-                className="h-9 w-9 text-text-secondary hover:text-text-primary"
-                onClick={() => setSearchOpen(true)}
-                aria-label="Search"
-              >
-                <Search className="h-5 w-5" />
-              </Button>
-            )}
-          </div>
+          {/* Search — opens full-screen overlay */}
+          <Button
+            variant="ghost"
+            size="icon"
+            className="h-9 w-9 text-text-secondary hover:text-text-primary"
+            onClick={() => setSearchOpen(true)}
+            aria-label="Search"
+          >
+            <Search className="h-5 w-5" />
+          </Button>
 
           {/* Notifications */}
           <NotificationBell />

@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Toaster } from "@/components/ui/sonner";
+import ServiceWorkerRegistration from "@/components/ServiceWorkerRegistration";
 import "./globals.css";
 
 const inter = Inter({
@@ -18,6 +19,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
+    manifest: "/manifest.json",
     title: {
         default: "Zephyrus — Stream Without Limits",
         template: "%s | Zephyrus",
@@ -57,6 +59,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                 <TooltipProvider>
                     {children}
                     <Toaster richColors position="top-right"/>
+                    <ServiceWorkerRegistration />
                 </TooltipProvider>
             </body>
         </html>
