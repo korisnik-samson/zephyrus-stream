@@ -2,7 +2,10 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { ChevronDown, ChevronUp, Play, Plus, Share2, Star, ThumbsUp, } from "lucide-react";
+import { ChevronDown, ChevronUp, Play, Plus, Check, Share2, Star, ThumbsUp, ThumbsDown } from "lucide-react";
+import { useMyList } from "@/hooks/useMyList";
+import { useRating } from "@/hooks/useRating";
+import { toast } from "sonner";
 import { Badge, Button, Separator, Tabs, TabsContent, TabsList, TabsTrigger, } from "@/components/ui";
 import { TMDB_IMAGE } from "@/lib/constants";
 import { calculateMatchPercentage, cn, formatRuntime, getBlurDataUrl, getMaturityColor, getYear, } from "@/lib/utils";
@@ -22,6 +25,8 @@ export default function TitleDetailClient({
                                           }: TitleDetailClientProps) {
     const [synopsisExpanded, setSynopsisExpanded] = useState(false);
     const matchPct = calculateMatchPercentage(title.id);
+    const { inList, toggle: toggleList } = useMyList(title.id);
+    const { rating, rate } = useRating(title.id);
 
     const isLongOverview = title.overview.length > 300;
     const displayOverview =
@@ -111,22 +116,36 @@ export default function TitleDetailClient({
                     <Button
                         size="lg"
                         variant="outline"
-                        className="gap-2 liquid-glass text-text-primary"
+                        className={cn("gap-2 liquid-glass text-text-primary", inList && "border-accent-gold/40 text-accent-gold-light")}
+                        onClick={() => toggleList(title.id)}
                     >
-                        <Plus className="h-5 w-5"/>
-                        My List
+                        {inList ? <Check className="h-5 w-5" /> : <Plus className="h-5 w-5" />}
+                        {inList ? "In My List" : "My List"}
+                    </Button>
+                    <Button
+                        size="icon"
+                        variant="outline"
+                        className={cn("h-11 w-11 rounded-full border-border hover:border-white/40", rating === "UP" ? "text-accent-green border-accent-green/40" : "text-text-primary")}
+                        onClick={() => rate("UP")}
+                        title="Like"
+                    >
+                        <ThumbsUp className={cn("h-5 w-5", rating === "UP" && "fill-current")} />
+                    </Button>
+                    <Button
+                        size="icon"
+                        variant="outline"
+                        className={cn("h-11 w-11 rounded-full border-border hover:border-white/40", rating === "DOWN" ? "text-accent-red border-accent-red/40" : "text-text-primary")}
+                        onClick={() => rate("DOWN")}
+                        title="Dislike"
+                    >
+                        <ThumbsDown className={cn("h-5 w-5", rating === "DOWN" && "fill-current")} />
                     </Button>
                     <Button
                         size="icon"
                         variant="outline"
                         className="h-11 w-11 rounded-full border-border hover:border-white/40 text-text-primary"
-                    >
-                        <ThumbsUp className="h-5 w-5"/>
-                    </Button>
-                    <Button
-                        size="icon"
-                        variant="outline"
-                        className="h-11 w-11 rounded-full border-border hover:border-white/40 text-text-primary"
+                        onClick={() => { navigator.clipboard?.writeText(window.location.href); toast.success("Link copied!"); }}
+                        title="Share"
                     >
                         <Share2 className="h-5 w-5"/>
                     </Button>

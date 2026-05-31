@@ -5,7 +5,6 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import {
   Search,
-  Bell,
   Menu,
   X,
   User,
@@ -14,6 +13,7 @@ import {
   ChevronDown,
   UserCircle2,
 } from "lucide-react";
+import NotificationBell from "./NotificationBell";
 import {
   Button,
   Avatar,
@@ -156,14 +156,7 @@ export default function Navbar() {
           </div>
 
           {/* Notifications */}
-          <Button
-            variant="ghost"
-            size="icon"
-            className="h-9 w-9 text-text-secondary hover:text-text-primary hidden sm:inline-flex"
-            aria-label="Notifications"
-          >
-            <Bell className="h-5 w-5" />
-          </Button>
+          <NotificationBell />
 
           {/* User Avatar Dropdown */}
           {isAuthenticated && user ? (
