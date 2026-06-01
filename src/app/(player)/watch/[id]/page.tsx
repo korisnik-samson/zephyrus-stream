@@ -1,4 +1,5 @@
 import { Suspense } from "react";
+import Link from "next/link";
 import { AlertTriangle } from "lucide-react";
 import api from "@/lib/api";
 import VideoPlayer from "@/components/player/VideoPlayer";
@@ -53,12 +54,12 @@ export default async function WatchPage({ params, searchParams }: PageProps) {
         <p className="text-sm text-white/50">
           This title could not be loaded. The backend may be offline.
         </p>
-        <a
+        <Link
           href="/"
           className="mt-2 text-sm text-accent-gold-light hover:text-accent-gold transition-colors"
         >
           ← Back to Browse
-        </a>
+        </Link>
       </div>
     );
   }

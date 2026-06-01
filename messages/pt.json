@@ -1,0 +1,45 @@
+{
+  "nav": {
+    "home": "Início",
+    "series": "Séries",
+    "films": "Filmes",
+    "myList": "Minha Lista",
+    "newAndPopular": "Novidades",
+    "search": "Pesquisar",
+    "categories": "Categorias"
+  },
+  "common": {
+    "play": "Reproduzir",
+    "moreInfo": "Mais informações",
+    "signIn": "Entrar",
+    "signOut": "Sair",
+    "settings": "Definições",
+    "loading": "A carregar…",
+    "seeAll": "Ver tudo",
+    "viewHistory": "Ver histórico"
+  },
+  "home": {
+    "continueWatching": "Continuar a ver",
+    "unavailable": "O conteúdo está a carregar ou indisponível.",
+    "checkBack": "Volte em breve para novos títulos."
+  },
+  "settings": {
+    "title": "Definições",
+    "accessibility": "Acessibilidade",
+    "highContrast": "Alto contraste",
+    "reduceMotion": "Reduzir movimento",
+    "language": "Idioma",
+    "subscription": "Subscrição e faturação",
+    "parentalControls": "Controlo parental",
+    "captionStyling": "Estilo das legendas"
+  },
+  "subscribe": {
+    "choosePlan": "Escolha o seu plano",
+    "subtitle": "Veja tudo o que quiser. Cancele quando quiser.",
+    "monthly": "Mensal",
+    "yearly": "Anual",
+    "subscribe": "Subscrever",
+    "currentPlan": "Plano atual",
+    "mostPopular": "Mais popular"
+  }
+}

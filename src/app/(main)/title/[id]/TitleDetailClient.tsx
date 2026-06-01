@@ -1,8 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
-import { ChevronDown, ChevronUp, Play, Plus, Check, Share2, Star, ThumbsUp, ThumbsDown } from "lucide-react";
+import { ChevronDown, ChevronUp, Play, Plus, Check, Share2, Star, ThumbsUp, ThumbsDown, Users } from "lucide-react";
 import { useMyList } from "@/hooks/useMyList";
 import { useRating } from "@/hooks/useRating";
 import { toast } from "sonner";
@@ -23,10 +24,16 @@ export default function TitleDetailClient({
                                               title,
                                               similar,
                                           }: TitleDetailClientProps) {
+    const router = useRouter();
     const [synopsisExpanded, setSynopsisExpanded] = useState(false);
     const matchPct = calculateMatchPercentage(title.id);
     const { inList, toggle: toggleList } = useMyList(title.id);
     const { rating, rate } = useRating(title.id);
+
+    const startWatchParty = () => {
+        const partyId = crypto.randomUUID().slice(0, 8);
+        router.push(`/party/${partyId}?title=${title.id}&host=1`);
+    };
 
     const isLongOverview = title.overview.length > 300;
     const displayOverview =
@@ -148,6 +155,16 @@ export default function TitleDetailClient({
                         title="Share"
                     >
                         <Share2 className="h-5 w-5"/>
+                    </Button>
+                    <Button
+                        size="lg"
+                        variant="outline"
+                        className="gap-2 liquid-glass text-text-primary"
+                        onClick={startWatchParty}
+                        title="Start a Watch Party"
+                    >
+                        <Users className="h-5 w-5"/>
+                        Watch Party
                     </Button>
                 </div>
 

@@ -1,9 +1,12 @@
 import React from "react";
 import type { Metadata } from "next";
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
+import { NextIntlClientProvider } from "next-intl";
+import { getLocale } from "next-intl/server";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Toaster } from "@/components/ui/sonner";
 import ServiceWorkerRegistration from "@/components/ServiceWorkerRegistration";
+import AccessibilityProvider from "@/components/AccessibilityProvider";
 import "./globals.css";
 
 const inter = Inter({
@@ -52,15 +55,19 @@ export const metadata: Metadata = {
     },
 };
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode; }>) {
+export default async function RootLayout({ children }: Readonly<{ children: React.ReactNode; }>) {
+    const locale = await getLocale();
     return (
-        <html lang="en" className="dark">
+        <html lang={locale} className="dark">
             <body className={`${inter.variable} ${plusJakartaSans.variable} font-sans antialiased`}>
-                <TooltipProvider>
-                    {children}
-                    <Toaster richColors position="top-right"/>
-                    <ServiceWorkerRegistration />
-                </TooltipProvider>
+                <NextIntlClientProvider>
+                    <TooltipProvider>
+                        {children}
+                        <Toaster richColors position="top-right"/>
+                        <ServiceWorkerRegistration />
+                        <AccessibilityProvider />
+                    </TooltipProvider>
+                </NextIntlClientProvider>
             </body>
         </html>
     );

@@ -1,0 +1,45 @@
+{
+  "nav": {
+    "home": "Home",
+    "series": "Series",
+    "films": "Films",
+    "myList": "My List",
+    "newAndPopular": "New & Popular",
+    "search": "Search",
+    "categories": "Categories"
+  },
+  "common": {
+    "play": "Play",
+    "moreInfo": "More Info",
+    "signIn": "Sign In",
+    "signOut": "Sign Out",
+    "settings": "Settings",
+    "loading": "Loading…",
+    "seeAll": "See All",
+    "viewHistory": "View History"
+  },
+  "home": {
+    "continueWatching": "Continue Watching",
+    "unavailable": "Content is loading or unavailable.",
+    "checkBack": "Check back soon for new titles."
+  },
+  "settings": {
+    "title": "Settings",
+    "accessibility": "Accessibility",
+    "highContrast": "High Contrast",
+    "reduceMotion": "Reduce Motion",
+    "language": "Language",
+    "subscription": "Subscription & Billing",
+    "parentalControls": "Parental Controls",
+    "captionStyling": "Caption Styling"
+  },
+  "subscribe": {
+    "choosePlan": "Choose your plan",
+    "subtitle": "Watch all you want. Cancel anytime.",
+    "monthly": "Monthly",
+    "yearly": "Yearly",
+    "subscribe": "Subscribe",
+    "currentPlan": "Current Plan",
+    "mostPopular": "Most Popular"
+  }
+}

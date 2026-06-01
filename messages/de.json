@@ -1,0 +1,45 @@
+{
+  "nav": {
+    "home": "Start",
+    "series": "Serien",
+    "films": "Filme",
+    "myList": "Meine Liste",
+    "newAndPopular": "Neu & Beliebt",
+    "search": "Suchen",
+    "categories": "Kategorien"
+  },
+  "common": {
+    "play": "Abspielen",
+    "moreInfo": "Mehr Infos",
+    "signIn": "Anmelden",
+    "signOut": "Abmelden",
+    "settings": "Einstellungen",
+    "loading": "Wird geladen…",
+    "seeAll": "Alle ansehen",
+    "viewHistory": "Verlauf ansehen"
+  },
+  "home": {
+    "continueWatching": "Weiterschauen",
+    "unavailable": "Inhalte werden geladen oder sind nicht verfügbar.",
+    "checkBack": "Schau bald wieder vorbei für neue Titel."
+  },
+  "settings": {
+    "title": "Einstellungen",
+    "accessibility": "Barrierefreiheit",
+    "highContrast": "Hoher Kontrast",
+    "reduceMotion": "Bewegung reduzieren",
+    "language": "Sprache",
+    "subscription": "Abo & Abrechnung",
+    "parentalControls": "Kindersicherung",
+    "captionStyling": "Untertitel-Stil"
+  },
+  "subscribe": {
+    "choosePlan": "Wähle deinen Tarif",
+    "subtitle": "Schau so viel du willst. Jederzeit kündbar.",
+    "monthly": "Monatlich",
+    "yearly": "Jährlich",
+    "subscribe": "Abonnieren",
+    "currentPlan": "Aktueller Tarif",
+    "mostPopular": "Am beliebtesten"
+  }
+}

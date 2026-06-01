@@ -12,6 +12,8 @@ import { Loader2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { PLAYER_PROGRESS_INTERVAL } from "@/lib/constants";
 import { usePlayerStore } from "@/stores/playerStore";
+import { usePreferencesStore } from "@/stores/preferencesStore";
+import { captionStyleVars } from "@/lib/captions";
 import api from "@/lib/api";
 
 import BackButton from "./BackButton";
@@ -61,6 +63,7 @@ export default function VideoPlayer({ session, seasons = [] }: VideoPlayerProps)
   // ── Preferences (persisted via Zustand) ──────────────────
   const { volume, isMuted, playbackRate, setVolume, setMuted, setPlaybackRate } =
     usePlayerStore();
+  const captionStyle = usePreferencesStore((s) => s.captionStyle);
 
   // ────────────────────────────────────────────────────────
   // HLS / Native source setup
@@ -426,7 +429,7 @@ export default function VideoPlayer({ session, seasons = [] }: VideoPlayerProps)
       ref={containerRef}
       className="relative h-full w-full bg-black overflow-hidden select-none"
       onMouseMove={resetControlsTimer}
-      style={{ cursor: showControls ? "default" : "none" }}
+      style={{ cursor: showControls ? "default" : "none", ...captionStyleVars(captionStyle) }}
     >
       {/* ── Video element ─────────────────────────────────── */}
       <video

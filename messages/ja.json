@@ -1,0 +1,45 @@
+{
+  "nav": {
+    "home": "ホーム",
+    "series": "シリーズ",
+    "films": "映画",
+    "myList": "マイリスト",
+    "newAndPopular": "新着・人気",
+    "search": "検索",
+    "categories": "カテゴリー"
+  },
+  "common": {
+    "play": "再生",
+    "moreInfo": "詳細",
+    "signIn": "ログイン",
+    "signOut": "ログアウト",
+    "settings": "設定",
+    "loading": "読み込み中…",
+    "seeAll": "すべて見る",
+    "viewHistory": "履歴を見る"
+  },
+  "home": {
+    "continueWatching": "続きを見る",
+    "unavailable": "コンテンツを読み込み中か、利用できません。",
+    "checkBack": "新しいタイトルをお楽しみに。"
+  },
+  "settings": {
+    "title": "設定",
+    "accessibility": "アクセシビリティ",
+    "highContrast": "ハイコントラスト",
+    "reduceMotion": "視差効果を減らす",
+    "language": "言語",
+    "subscription": "サブスクリプションと請求",
+    "parentalControls": "ペアレンタルコントロール",
+    "captionStyling": "字幕スタイル"
+  },
+  "subscribe": {
+    "choosePlan": "プランを選択",
+    "subtitle": "好きなだけ視聴。いつでもキャンセル可能。",
+    "monthly": "月額",
+    "yearly": "年額",
+    "subscribe": "登録する",
+    "currentPlan": "現在のプラン",
+    "mostPopular": "一番人気"
+  }
+}

@@ -503,6 +503,80 @@ a {
 }
 
 /* ═══════════════════════════════════════════════════════════
+   Accessibility — High Contrast & Reduced Motion
+   Toggled on <html> by AccessibilityProvider
+   ═══════════════════════════════════════════════════════════ */
+
+.high-contrast {
+    --color-text-primary: #ffffff;
+    --color-text-secondary: #e8dcc8;
+    --color-text-muted: #c0ad92;
+    --color-bg-primary: #000000;
+    --color-bg-secondary: #0a0a0a;
+    --color-bg-card: #141414;
+    --color-bg-elevated: #1f1f1f;
+    --color-border: rgba(255, 220, 160, 0.35);
+    --color-border-hover: rgba(255, 220, 160, 0.55);
+    --color-accent-purple: #ff7a1a;
+    --color-accent-purple-light: #ffb060;
+}
+
+.high-contrast body {
+    background-color: #000000;
+}
+
+/* Stronger focus rings + visible outlines in high contrast */
+.high-contrast :focus-visible {
+    outline: 3px solid #ffb060;
+    outline-offset: 2px;
+}
+
+.high-contrast a,
+.high-contrast button {
+    text-underline-offset: 2px;
+}
+
+/* Reduced motion — kill animations & transitions */
+.reduce-motion *,
+.reduce-motion *::before,
+.reduce-motion *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+}
+
+/* Respect OS-level reduced motion preference too */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+    }
+}
+
+/* Shake animation for invalid PIN entry */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-6px); }
+    75% { transform: translateX(6px); }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   Native <track> caption cue styling
+   Driven by CSS variables set from the caption preferences store
+   ═══════════════════════════════════════════════════════════ */
+video::cue {
+    font-size: var(--caption-size, 1.25rem);
+    color: var(--caption-color, #ffffff);
+    background-color: var(--caption-bg, rgba(0, 0, 0, 0.55));
+    font-family: var(--caption-font, var(--font-sans));
+    line-height: 1.4;
+}
+
+/* ═══════════════════════════════════════════════════════════
    shadcn/ui Theme Variables — Zephyrus Dark Orange Theme
    Always dark: html has className="dark"
    ═══════════════════════════════════════════════════════════ */

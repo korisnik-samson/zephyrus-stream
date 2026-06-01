@@ -1,0 +1,45 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "series": "Séries",
+    "films": "Films",
+    "myList": "Ma Liste",
+    "newAndPopular": "Nouveautés",
+    "search": "Rechercher",
+    "categories": "Catégories"
+  },
+  "common": {
+    "play": "Lecture",
+    "moreInfo": "Plus d'infos",
+    "signIn": "Se connecter",
+    "signOut": "Se déconnecter",
+    "settings": "Paramètres",
+    "loading": "Chargement…",
+    "seeAll": "Voir tout",
+    "viewHistory": "Voir l'historique"
+  },
+  "home": {
+    "continueWatching": "Reprendre",
+    "unavailable": "Le contenu se charge ou n'est pas disponible.",
+    "checkBack": "Revenez bientôt pour de nouveaux titres."
+  },
+  "settings": {
+    "title": "Paramètres",
+    "accessibility": "Accessibilité",
+    "highContrast": "Contraste élevé",
+    "reduceMotion": "Réduire les animations",
+    "language": "Langue",
+    "subscription": "Abonnement et facturation",
+    "parentalControls": "Contrôle parental",
+    "captionStyling": "Style des sous-titres"
+  },
+  "subscribe": {
+    "choosePlan": "Choisissez votre forfait",
+    "subtitle": "Regardez à volonté. Annulez à tout moment.",
+    "monthly": "Mensuel",
+    "yearly": "Annuel",
+    "subscribe": "S'abonner",
+    "currentPlan": "Forfait actuel",
+    "mostPopular": "Le plus populaire"
+  }
+}
