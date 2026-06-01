@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { Search, Menu, X, User, Settings, LogOut, ChevronDown, UserCircle2 } from "lucide-react";
+import { Search, Menu, X, User, Settings, LogOut, ChevronDown, UserCircle2, LayoutDashboard } from "lucide-react";
 import NotificationBell from "./NotificationBell";
 import { useUIStore } from "@/stores/uiStore";
 import {
@@ -155,6 +155,15 @@ export default function Navbar() {
                     <Settings className="h-4 w-4" />
                     Settings
                   </DropdownMenuItem>
+                  {user.role === "ADMIN" && (
+                    <DropdownMenuItem
+                      className="cursor-pointer gap-2 text-accent-purple-light hover:bg-bg-elevated"
+                      onClick={() => router.push("/admin/dashboard")}
+                    >
+                      <LayoutDashboard className="h-4 w-4" />
+                      Admin Dashboard
+                    </DropdownMenuItem>
+                  )}
                 </DropdownMenuGroup>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem
